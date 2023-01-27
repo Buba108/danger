@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Animation Example</title>
+  </head>
+  <body>
+    <div id="image-container">
+      <img id="image" src="foj92oc29tk71.jpg" alt="3D Image">
+      <script>
+  // Wait for 5 seconds before removing the image
+  setTimeout(() => {
+    const imageContainer = document.getElementById("image-container");
+    imageContainer.removeChild(document.getElementById("image"));
+  }, 5000);
+    const image = document.getElementById("image");
+const imageContainer = document.getElementById("image-container");
+
+imageContainer.style.background = "rgba(0, 0, 0, 0.5)";
+
+let rotation = 0;
+
+setInterval(() => {
+  rotation += 10;
+  image.style.transform = `rotateX(${rotation}deg) rotateY(${rotation}deg) rotateZ(${rotation}deg)`;
+}, 50);
+
+setTimeout(() => {
+  imageContainer.style.background = "rgba(255, 255, 255, 0.5)";
+}, 4500);
+
+setTimeout(() => {
+  imageContainer.style.background = "rgba(255, 255, 255, 1)";
+}, 4900);
+      </script>
+    </div>
+  </body>
+</html>
